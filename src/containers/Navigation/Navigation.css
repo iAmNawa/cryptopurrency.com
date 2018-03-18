@@ -9,7 +9,7 @@
 
 .Navigation li {
   display: inline-block;
-  margin: 5px 20px;
+  margin: 5px 40px;
 }
 
 .Navigation a {
@@ -28,4 +28,10 @@
 
 .imgHover:hover {
   transform: scale(1.04);
+}
+
+@media screen and (max-width: 500px) {
+  .Navigation li {
+    margin: 5px 10px;
+  }
 }
