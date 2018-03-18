@@ -53,8 +53,11 @@ class CoinsMain extends Component {
   }
 
   componentDidMount = () => {
-     this.interval = setInterval(this.letUsGetBtc, 5000);
-     this.interval = setInterval(this.letUsGetLtc, 5000);
+     this.letUsGetBtc();
+     this.letUsGetLtc();
+     this.letUsGetEth();
+     this.interval = setInterval(this.letUsGetBtc, 4000);
+     this.interval = setInterval(this.letUsGetLtc, 4500);
      this.interval = setInterval(this.letUsGetEth, 5000);
    }
 
