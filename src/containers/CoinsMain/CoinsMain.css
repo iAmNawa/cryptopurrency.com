@@ -1,0 +1,19 @@
+.coinsList{
+  margin: 0px auto;
+  margin-top: 40px;
+  padding-top: 10px;
+  background-color: lightgrey;
+  text-align: center;
+  width: 85%;
+}
+
+.hrWidth {
+  width: 94%;
+  border-color: #696969;
+}
+
+.coins {
+  padding: 10px 10px;
+  text-align: left;
+  background-color: white;
+}
