@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 
 import './CoinsMain.css'
 
-const ROOT_URL = 'http://cryptopurrency.com:45789/results';
+const ROOT_URL_BTC = 'http://cryptopurrency.com:45789/results';
+const ROOT_URL_LTC = 'https://api.gdax.com/products/ltc-USD/ticker';
+const ROOT_URL_ETH = 'https://api.gdax.com/products/ETH-USD/ticker';
 
 class CoinsMain extends Component {
   state = {
-    btcprice: 0
+    btcprice: 0,
+    ltcprice: 0,
+    ethprice: 0
   }
 
-  letUsGetResults = () => {
+  letUsGetBtc = () => {
     var request = new XMLHttpRequest();
     //request.addEventListener("load", letUsGetResults);
-    request.open('GET', ROOT_URL);
+    request.open('GET', ROOT_URL_BTC);
     request.responseType = 'json';
 
     request.onload = function() {
@@ -22,8 +26,36 @@ class CoinsMain extends Component {
     request.send();
   }
 
+  letUsGetLtc = () => {
+    var request = new XMLHttpRequest();
+    //request.addEventListener("load", letUsGetResults);
+    request.open('GET', ROOT_URL_LTC);
+    request.responseType = 'json';
+
+    request.onload = function() {
+      this.setState({ltcprice: request.response.price})
+      console.log(request.response.price)
+    }.bind(this)
+    request.send();
+  }
+
+  letUsGetEth = () => {
+    var request = new XMLHttpRequest();
+    //request.addEventListener("load", letUsGetResults);
+    request.open('GET', ROOT_URL_ETH);
+    request.responseType = 'json';
+
+    request.onload = function() {
+      this.setState({ethprice: request.response.price})
+      console.log(request.response.price)
+    }.bind(this)
+    request.send();
+  }
+
   componentDidMount = () => {
-     this.interval = setInterval(this.letUsGetResults, 2000);
+     this.interval = setInterval(this.letUsGetBtc, 5000);
+     this.interval = setInterval(this.letUsGetLtc, 5000);
+     this.interval = setInterval(this.letUsGetEth, 5000);
    }
 
   componentWillUnmount = () => {
@@ -36,8 +68,8 @@ class CoinsMain extends Component {
         <div className="coinsListElements">Coins List:</div>
         <hr className="hrWidth" />
         <div className="coins">BTC: {this.state.btcprice}</div>
-        <div className="coins">LTC:</div>
-        <div className="coins">ETH:</div>
+        <div className="coins">LTC: {this.state.ltcprice}</div>
+        <div className="coins">ETH: {this.state.ethprice}</div>
      </div>
    )
  }
