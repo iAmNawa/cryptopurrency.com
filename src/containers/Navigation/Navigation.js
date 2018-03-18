@@ -11,10 +11,9 @@ class Navigation extends Component {
      <header className="Navigation">
        <nav>
           <ul>
-                 <li><a href="/">Home</a></li>
-                 <li><a href="/"><img src={btc} /></a></li>
-                 <li><a href="/"><img src={ltc} /></a></li>
-                 <li><a href="/"><img src={eth} /></a></li>
+                 <li><a href="/"><img className="imgHover" src={btc} /></a></li>
+                 <li><a href="/"><img className="imgHover" src={ltc} /></a></li>
+                 <li><a href="/"><img className="imgHover" src={eth} /></a></li>
           </ul>
        </nav>
      </header>

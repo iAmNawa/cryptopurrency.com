@@ -9,7 +9,7 @@
 
 .Navigation li {
   display: inline-block;
-  margin: 20px;
+  margin: 5px 20px;
 }
 
 .Navigation a {
@@ -20,4 +20,12 @@
 .Navigation a:hover,
 .Navigation a:active {
   color: #fa923f;
+}
+
+.imgHover {
+  transition: all .1s;
+}
+
+.imgHover:hover {
+  transform: scale(1.04);
 }
