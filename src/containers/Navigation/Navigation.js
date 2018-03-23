@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import { Route, NavLink, Link, Switch, Redirect } from 'react-router-dom';
 
 import './Navigation.css';
+import CoinsMain from '../../containers/CoinsMain/CoinsMain';
 import BtcPage from '../../components/BtcPage';
 import LtcPage from '../../components/LtcPage';
 import EthPage from '../../components/EthPage';
@@ -32,6 +33,7 @@ class Navigation extends Component {
         </ul>
        </nav>
       </header>
+       <Route path='/' exact component={CoinsMain} />
        <Route path='/btcpage/' component={BtcPage} />
        <Route path='/ltcpage/' component={LtcPage} />
        <Route path='/ethpage/' component={EthPage} />
