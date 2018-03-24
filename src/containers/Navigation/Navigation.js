@@ -3,9 +3,7 @@ import { Route, NavLink, Link, Switch, Redirect } from 'react-router-dom';
 
 import './Navigation.css';
 import CoinsMain from '../../containers/CoinsMain/CoinsMain';
-import BtcPage from '../../components/BtcPage';
-import LtcPage from '../../components/LtcPage';
-import EthPage from '../../components/EthPage';
+import CoinPageCreator from '../../components/CoinPageCreator';
 
 import btc from '../../assets/images/btc1.png';
 import ltc from '../../assets/images/ltc.png';
@@ -34,9 +32,9 @@ class Navigation extends Component {
        </nav>
       </header>
        <Route path='/' exact component={CoinsMain} />
-       <Route path='/btcpage/' component={BtcPage} />
-       <Route path='/ltcpage/' component={LtcPage} />
-       <Route path='/ethpage/' component={EthPage} />
+       <Route path='/btcpage/' component={() => <CoinPageCreator name="BTC" />} />
+       <Route path='/ltcpage/' component={() => <CoinPageCreator name="LTC" />} />
+       <Route path='/ethpage/' component={() => <CoinPageCreator name="ETH" />} />
     </div>
    )
  }
