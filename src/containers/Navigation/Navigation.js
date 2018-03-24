@@ -32,9 +32,9 @@ class Navigation extends Component {
        </nav>
       </header>
        <Route path='/' exact component={CoinsMain} />
-       <Route path='/btcpage/' component={() => <CoinPageCreator name="BTC" />} />
-       <Route path='/ltcpage/' component={() => <CoinPageCreator name="LTC" />} />
-       <Route path='/ethpage/' component={() => <CoinPageCreator name="ETH" />} />
+       <Route path='/btcpage/' render={() => <CoinPageCreator name="BTC" />} />
+       <Route path='/ltcpage/' render={() => <CoinPageCreator name="LTC" />} />
+       <Route path='/ethpage/' render={() => <CoinPageCreator name="ETH" />} />
     </div>
    )
  }
