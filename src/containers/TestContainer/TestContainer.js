@@ -14,10 +14,21 @@ class TestContainer extends Component {
             } );
   }
 
+  getIt() {
+    axios.get( '/dylan.json')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <div>
        <button onClick={this.sendIt}>Send it</button>
+       <button onClick={this.getIt}>Get it</button>
       </div>
     );
   }
