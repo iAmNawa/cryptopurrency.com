@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './CoinsMain.css'
 
-const ROOT_URL_BTC = 'http://cryptopurrency.com:45789/results';
+const ROOT_URL_BTC = 'https://api.gdax.com/products/BTC-USD/ticker'
 const ROOT_URL_LTC = 'https://api.gdax.com/products/ltc-USD/ticker';
 const ROOT_URL_ETH = 'https://api.gdax.com/products/ETH-USD/ticker';
 
@@ -34,7 +34,7 @@ class CoinsMain extends Component {
 
     request.onload = function() {
       this.setState({ltcprice: request.response.price})
-      console.log(request.response.price)
+      //console.log(request.response.price)
     }.bind(this)
     request.send();
   }
@@ -47,7 +47,7 @@ class CoinsMain extends Component {
 
     request.onload = function() {
       this.setState({ethprice: request.response.price})
-      console.log(request.response.price)
+      //console.log(request.response.price)
     }.bind(this)
     request.send();
   }
