@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './CoinsMain.css'
 
-const ROOT_URL_BTC = 'https://api.gdax.com/products/BTC-USD/ticker'
+const ROOT_URL_BTC = 'https://api.gdax.com/products/BTC-USD/ticker';
 const ROOT_URL_LTC = 'https://api.gdax.com/products/ltc-USD/ticker';
 const ROOT_URL_ETH = 'https://api.gdax.com/products/ETH-USD/ticker';
 

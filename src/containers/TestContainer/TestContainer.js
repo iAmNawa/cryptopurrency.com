@@ -4,7 +4,7 @@ import axios from '../../axiostest';
 class TestContainer extends Component {
   sendIt() {
     const things = {
-      thingOne: "itWorked"
+      thingOne: "THIS IS WORKING"
     }
     axios.post( '/dylan.json', things )
             .then( response => {
